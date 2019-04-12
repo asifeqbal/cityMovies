@@ -1,0 +1,71 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons>
+          <ion-back-button></ion-back-button>
+      </ion-buttons>   
+    <ion-icon name="search" slot="end" size="large"></ion-icon>   
+    <ion-title>
+        Movie List
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+    <ion-slides pager="true" autoplay="1000" loop="true" speed="500" pager="true" #mySlider [options]="options" (ionSlidesDidLoad)="slideChanged(mySlider)">
+
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                  <ion-img src="/assets/kesari.jpg"></ion-img>
+                  
+                </ion-card-header>
+            </ion-card>
+        </ion-slide>          
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                  <ion-img src="/assets/captain.jpg"></ion-img>
+                  
+                </ion-card-header>
+            </ion-card>
+        </ion-slide>
+    
+        <ion-slide>
+            <ion-card>
+                <ion-card-header>
+                  <ion-img src="/assets/badla.jpg"></ion-img>
+                  
+                </ion-card-header>
+            </ion-card>
+
+        </ion-slide>
+
+      </ion-slides>
+ <ion-item>
+    <ion-button expand="block" (click)="offerpage()">Offers</ion-button>
+ </ion-item>
+
+<ion-grid>
+  <ion-row>
+      <ion-col col-6 *ngFor="let m of movies">
+          <ion-item href="#"  >
+              <ion-img src="{{m.image_url}}" expand="block"></ion-img>                 
+          </ion-item>
+          <ion-item>
+            <ion-label text-wrap>
+                <ion-text color="primary">
+                  <h2>{{m.name}}</h2>
+                </ion-text>
+                <p>17 Mar,2019</p>
+                <ion-button color="primary" ><ion-icon name="create"></ion-icon></ion-button>  
+                <ion-button color="danger"><ion-icon  name="trash"></ion-icon></ion-button>  
+                <ion-button expand="block" (click)="booking(m.id)">Book</ion-button>                    
+            </ion-label>
+         </ion-item>
+         
+      </ion-col> 
+  </ion-row>
+</ion-grid>
+
+
+</ion-content>

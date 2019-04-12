@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      Login
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  
+
+
+    <form #form="ngForm" >
+      <ion-grid>
+        <ion-row color="primary" justify-content-center>
+          <ion-col align-self-center size-md="6" size-lg="5" size-xs="12">
+            <!-- <ion-item text-center>
+              <ion-img src="/assets/logo.png"></ion-img>
+            </ion-item> -->
+            <div padding>
+              <ion-item >
+                <ion-icon name="person" color="light"></ion-icon>&nbsp;&nbsp;
+                <ion-input name="name" placeholder="User Email" [(ngModel)]="validate.email" required></ion-input>
+              </ion-item>
+              <ion-item>
+                <ion-icon name="key" color="light"></ion-icon>&nbsp;&nbsp;
+                <ion-input name="password" type="password" placeholder="Password" [(ngModel)]="validate.password" required></ion-input>
+              </ion-item>
+            </div>
+            <ion-text color="light" text-right (click)="forgotPass()"><p>Forgot Password?</p></ion-text>
+            <ion-text color="light" text-right (click)="takePicture()"><p>Ionic camaera</p></ion-text>
+            <ion-text color="light" text-right (click)="getPosition()"><p>Ionic location</p></ion-text>
+            <div>
+              <ion-button size="large" type="submit" [disabled]="form.invalid" expand="block" (click)="onLogin()"><ion-icon name="log-in"></ion-icon>SIGN IN</ion-button>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <ion-text color="light" text-center > <p>Or Sign in with:</p> </ion-text>
+      <ion-grid>
+          <ion-row>
+            <ion-col align-self-start>
+              <ion-button color="primary" expand="block" href="https://www.facebook.com/" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col align-self-center>
+              <ion-button color="secondary" expand="block" href="https://twitter.com/login" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </ion-button>
+            </ion-col>
+            <ion-col align-self-end>
+              <ion-button color="danger" expand="block" href="https://plus.google.com" target="_blank">
+                <ion-icon name="logo-googleplus"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <!-- Other links -->
+        <ion-text color="light" text-center > <p (click)="register()">New here? <strong>Sign up</strong></p> </ion-text>
+    
+    </form>
+      
+</ion-content>

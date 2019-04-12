@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="end">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>   
+    <ion-icon name="search" slot="end" size="large"></ion-icon>   
+    <ion-title>
+        Movie Booking
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+<ion-item>
+  <ion-button expand="block" (click)="offerpage()">Offers</ion-button>
+</ion-item>
+
+<ion-grid >
+  <ion-row>
+      <ion-col col-6 >
+          <ion-item href="#"  >
+              <ion-img src="{{movie.image_url}}" expand="block"></ion-img>                 
+          </ion-item>
+          <ion-item>
+            <ion-label text-wrap>
+                <ion-text color="primary">
+                  <h2>{{m.name}}</h2>
+                </ion-text>
+                <p>17 Mar,2019</p>
+                <ion-list>
+                  <ion-list-header>Gender</ion-list-header>
+                
+                  <ion-item>
+                  
+                    <ion-select placeholder="Select One">
+                      <ion-select-option value="f">Female</ion-select-option>
+                      <ion-select-option value="m">Male</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                
+                  <ion-item>
+                    <ion-label>Select City</ion-label>
+                    <ion-select value="brown" okText="Okay" cancelText="Dismiss">
+                      <ion-select-option value="kolkata">Kolkata</ion-select-option>
+                      <ion-select-option value="banglore">Banglore</ion-select-option>
+                      <ion-select-option value="delhi">Delhi</ion-select-option>
+                      <ion-select-option value="mumbai">Mumbai</ion-select-option>
+                    </ion-select>
+                  </ion-item>
+                
+                </ion-list> 
+                <ion-button expand="block" (click)="booking(m.id)">Book</ion-button>                    
+            </ion-label>
+         </ion-item>         
+      </ion-col> 
+  </ion-row>
+</ion-grid>
+
+</ion-content>
